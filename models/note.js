@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 const noteSchema = new Schema({
     text: {type: String, required: true},
     user: {type: Schema.Types.ObjectId, required: true},
-    createdAt: {type: Date, timestamps: true},
+    createdAt: {type: Date},
 }, {timestamps: true})
 
 module.exports = mongoose.model('Note', noteSchema);

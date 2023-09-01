@@ -2,10 +2,10 @@ import { now } from 'mongoose';
 import React, { useState } from 'react';
 import * as notesAPI from '../../utilities/notes-api'
 
-export default function NewNotePage({ addNote }) {
+export default function NewNotePage({ addNote, user }) {
   const [newNote, setNewNote] = useState({
     text: "",
-    createdAt: Date.now()
+    createdAt: new Date()
   })
 
 function handleChange(evt) {
@@ -16,10 +16,10 @@ function handleChange(evt) {
 function handleAddNote(evt) {
     evt.preventDefault();
     addNote(newNote);
-    notesAPI.create();
+    notesAPI.createNote(newNote);
     setNewNote({
         text: "",
-        createdAt: Date.now()
+        createdAt: new Date()
     });
 }
 

@@ -10,7 +10,7 @@ export default function NoteCard({ note, index }) {
     <Link to={noteURL}>
       <div className="NoteCard">
         <p className="note-text">{note.text}</p>
-        <p className="note-timestamp">Created: {date}</p>
+        <p className="note-timestamp">Created: {date.toLocaleString()}</p>
       </div>
     </Link>
   );
